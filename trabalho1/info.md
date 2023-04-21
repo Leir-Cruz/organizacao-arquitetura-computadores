@@ -17,3 +17,8 @@
 - funct7: opcode assistant 7 bits
 
 ![img.png](img.png)
+
+
+### Risc-V Formats
+
+![img_1.png](img_1.png)
