@@ -1,0 +1,19 @@
+# Info
+### Instructions Formats Risc-V
+
+- R-type: arithmetic operation
+- I-type: immediately data operation
+- S-type: store operation
+- SB-type: conditional jump operation
+- U-type: immediately big data operation
+- UJ-type: unconditional jump operation
+
+### Important terms
+- opcode: identify instruction
+- rd: register destiny operator (result)
+- funct3: opcode assistant 3 bits
+- rs1: first register operating from origen
+- rs2: second register operating from origen
+- funct7: opcode assistant 7 bits
+
+![img.png](img.png)
