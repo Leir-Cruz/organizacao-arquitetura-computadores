@@ -1,0 +1,3 @@
+/home/gabrielcruz/Documentos/Unb/oac/cmake-build-debug/CMakeFiles/oac.dir
+/home/gabrielcruz/Documentos/Unb/oac/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/gabrielcruz/Documentos/Unb/oac/cmake-build-debug/CMakeFiles/rebuild_cache.dir
