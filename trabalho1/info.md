@@ -24,6 +24,16 @@
 ![img.png](img.png)
 
 ### Risc-V Formats
+#### Using Risc-V, instructions have 32 bits of length divided between the fields:
+- funct7
+- rs2
+- rs1
+- funct3
+- rd
+- opcode
+
+
+- Some examples:
 
 ![img_1.png](img_1.png)
 
