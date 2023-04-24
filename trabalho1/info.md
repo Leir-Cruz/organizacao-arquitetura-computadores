@@ -40,6 +40,10 @@ Here some example:
 - 0 & anything = 0
 - 1 & anything = 1
 
+#### Traveling through bits
+- We can use ">>" operator to travel to our´s bits, adding zeros to the left
+- Then we can use a mask to "look" only at the digits we want, making sure all the others are equal to zero by "& 0".
+
 ### Risc-V Formats
 #### Using Risc-V, instructions have 32 bits of length divided between the fields:
 - funct7
