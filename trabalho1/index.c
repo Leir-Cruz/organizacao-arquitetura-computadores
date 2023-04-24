@@ -6,12 +6,23 @@ int main() {
     uint32_t RI, funct7, funct3, opcode, rd, rs1, rs2, shamt;
     int32_t imm32;
 
-    //Lets put some of the mask we will use the most
+    //Let´s put some of the mask we will use the most
     uint32_t last_7_bits_mask = 0x7f;
 
     //read instruction and identify it using opcode
     scanf("%x", &RI);
-    printf("%x", (RI & last_7_bits_mask));
+    opcode = RI & last_7_bits_mask;
+
+    //checks if it´s an R-type instruction
+    if(opcode == 0x33 || opcode ==  0xb3) {
+
+    //checks if it´s an I-type instruction
+    } else if (opcode == 0x13) {
+
+    //checks if it´s an S-type instruction
+    } else if (opcode == 0x23) {
+
+    }
 
 
 
