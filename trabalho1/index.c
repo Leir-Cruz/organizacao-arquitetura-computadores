@@ -44,14 +44,14 @@ int main() {
         printf("rd: %x\n", rd);
 
         if(funct3 == 0x1 || funct3 == 0x5) {
-            imm32 = RI >> 20 & twelve_bits_mask;
-            printf("imm: %x\n", imm32 );
-
-        } else {
             funct7 = RI >> 25 & seven_bits_mask;
             shamt =  RI >> 20 & five_bits_mask;
             printf("funct7: %x\n", funct7 );
             printf("shamt: %x\n", shamt );
+
+        } else {
+            imm32 = RI >> 20 & twelve_bits_mask;
+            printf("imm: %x\n", imm32 );
         }
 
 
