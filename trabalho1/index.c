@@ -47,7 +47,16 @@ int main() {
 
     //checks if it´s an S-type instruction
     } else if (opcode == 0x23) {
+        imm32 = ( RI >> 25  & seven_bits_mask ) + ( RI >> 7 & five_bits_mask );
+        rs2 = RI >> 20 & five_bits_mask;
+        rs1 = RI >> 15 & five_bits_mask;
+        funct3 = RI >> 12  & three_bits_mask;
 
+        printf("opcode: %x\n", opcode);
+        printf("imm: %x\n",imm32 );
+        printf("rs2: %x\n", rs2);
+        printf("rs1: %x\n", rs1);
+        printf("funct3: %x\n", funct3);
     }
 
 
