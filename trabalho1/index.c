@@ -85,7 +85,7 @@ int main() {
     } else if(opcode == 0x3) {
         imm32 = RI >> 20 & twelve_bits_mask;
         rs1 = RI >> 15 & five_bits_mask;
-        funct3 = RI >> 10 & three_bits_mask;
+        funct3 = RI >> 12 & three_bits_mask;
         rd = RI >> 7 & five_bits_mask;
 
         printf("opcode: %x\n", opcode);
