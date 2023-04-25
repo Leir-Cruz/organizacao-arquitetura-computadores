@@ -34,16 +34,26 @@ int main() {
 
     //checks if it´s an I-type instruction
     } else if (opcode == 0x13) {
-        imm32 = RI >> 20 & twelve_bits_mask;
         rs1 = RI >> 15 & five_bits_mask;
         funct3 = RI >> 10 & three_bits_mask;
         rd = RI >> 7 & seven_bits_mask;
 
         printf("opcode: %x\n", opcode);
-        printf("imm: %x\n",imm32 );
         printf("rs1: %x\n", rs1);
         printf("funct3: %x\n", funct3);
         printf("rd: %x\n", rd);
+
+        if(funct3 == 0x1 || funct3 == 0x5) {
+            imm32 = RI >> 20 & twelve_bits_mask;
+            printf("imm: %x\n", imm32 );
+
+        } else {
+            funct7 = RI >> 25 & seven_bits_mask;
+            shamt =  RI >> 20 & five_bits_mask;
+            printf("funct7: %x\n", funct7 );
+            printf("shamt: %x\n", shamt );
+        }
+
 
     //checks if it´s an S-type instruction
     } else if (opcode == 0x23) {
