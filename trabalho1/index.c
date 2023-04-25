@@ -21,9 +21,9 @@ int main() {
 
         funct7 = RI >> 25 & seven_bits_mask;
         rs2 = RI >> 20 & five_bits_mask;
-        rs1 = RI >> 15 & three_bits_mask;
+        rs1 = RI >> 15 & five_bits_mask;
         funct3 = RI >> 12 & three_bits_mask;
-        rd = RI >> 7 & seven_bits_mask;
+        rd = RI >> 7 & five_bits_mask;
 
         printf("opcode: %x\n", opcode);
         printf("funct7: %x\n",funct7 );
@@ -36,7 +36,7 @@ int main() {
     } else if (opcode == 0x13) {
         rs1 = RI >> 15 & five_bits_mask;
         funct3 = RI >> 10 & three_bits_mask;
-        rd = RI >> 7 & seven_bits_mask;
+        rd = RI >> 7 & five_bits_mask;
 
         printf("opcode: %x\n", opcode);
         printf("rs1: %x\n", rs1);
@@ -57,16 +57,43 @@ int main() {
 
     //checks if it´s an S-type instruction
     } else if (opcode == 0x23) {
-        imm32 = ( RI >> 25  & seven_bits_mask ) + ( RI >> 7 & five_bits_mask );
+        imm32 = (RI >> 25 & seven_bits_mask) + (RI >> 7 & five_bits_mask);
         rs2 = RI >> 20 & five_bits_mask;
         rs1 = RI >> 15 & five_bits_mask;
-        funct3 = RI >> 12  & three_bits_mask;
+        funct3 = RI >> 12 & three_bits_mask;
 
         printf("opcode: %x\n", opcode);
-        printf("imm: %x\n",imm32 );
+        printf("imm: %x\n", imm32);
         printf("rs2: %x\n", rs2);
         printf("rs1: %x\n", rs1);
         printf("funct3: %x\n", funct3);
+
+    //checks if it´s an I-type Jal instruction
+    } else if(opcode == 0x67) {
+        imm32 = RI >> 20 & twelve_bits_mask;
+        rs1 = RI >> 15 & five_bits_mask;
+        funct3 = RI >> 10 & three_bits_mask;
+        rd = RI >> 7 & five_bits_mask;
+
+        printf("opcode: %x\n", opcode);
+        printf("imm: %x\n", imm32 );
+        printf("rs1: %x\n", rs1);
+        printf("funct3: %x\n", funct3);
+        printf("rd: %x\n", rd);
+
+    //checks if it´s an I-type load instruction
+    } else if(opcode == 0x3) {
+        imm32 = RI >> 20 & twelve_bits_mask;
+        rs1 = RI >> 15 & five_bits_mask;
+        funct3 = RI >> 10 & three_bits_mask;
+        rd = RI >> 7 & five_bits_mask;
+
+        printf("opcode: %x\n", opcode);
+        printf("imm: %x\n", imm32 );
+        printf("rs1: %x\n", rs1);
+        printf("funct3: %x\n", funct3);
+        printf("rd: %x\n", rd);
+        
     }
 
 
