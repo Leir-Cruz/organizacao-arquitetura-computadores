@@ -7,6 +7,7 @@ int main() {
     int32_t imm32;
 
     //Let´s put some of the mask we will use the most
+    uint32_t twelve_bits_mask = 0xfff; //111 1111 1111
     uint32_t seven_bits_mask = 0x7f; //0111 1111
     uint32_t five_bits_mask = 0x1f; //0001 1111
     uint32_t three_bits_mask = 0x7; //0111
@@ -33,6 +34,16 @@ int main() {
 
     //checks if it´s an I-type instruction
     } else if (opcode == 0x13) {
+        imm32 = RI >> 20 & twelve_bits_mask;
+        rs1 = RI >> 15 & five_bits_mask;
+        funct3 = RI >> 10 & three_bits_mask;
+        rd = RI >> 7 & seven_bits_mask;
+
+        printf("opcode: %x\n", opcode);
+        printf("imm: %x\n",imm32 );
+        printf("rs1: %x\n", rs1);
+        printf("funct3: %x\n", funct3);
+        printf("rd: %x\n", rd);
 
     //checks if it´s an S-type instruction
     } else if (opcode == 0x23) {
